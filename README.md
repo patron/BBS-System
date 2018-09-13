@@ -1,4 +1,4 @@
-# Codeigniter 3 Tutorial - Simple Authentication and Authorization
+# Jira BlockChain Bonus System 
 
-This is final code for tutorial **Codeigniter 3 Tutorial - Simple Authentication and Authorization**
+Based on CodeIgniter Jira Web3.js and other technologies**
 
