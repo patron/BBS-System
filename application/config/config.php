@@ -493,8 +493,8 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 
-$allowed_domains = array('ciauth3', 'ciauth-test');
-$default_domain  = 'ciauth3';
+$allowed_domains = array('bbssystem', 'bbssystem-test');
+$default_domain  = 'bbssystem';
 
 if (in_array($_SERVER['HTTP_HOST'], $allowed_domains, TRUE))
 {
