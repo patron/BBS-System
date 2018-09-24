@@ -26,11 +26,11 @@ var contractABI =
             "constant": false,
             "inputs": [
                 {
-                    "name": "spender",
+                    "name": "_spender",
                     "type": "address"
                 },
                 {
-                    "name": "value",
+                    "name": "_value",
                     "type": "uint256"
                 }
             ],
@@ -49,7 +49,7 @@ var contractABI =
             "constant": false,
             "inputs": [
                 {
-                    "name": "value",
+                    "name": "_value",
                     "type": "uint256"
                 }
             ],
@@ -63,15 +63,96 @@ var contractABI =
             "constant": false,
             "inputs": [
                 {
-                    "name": "from",
+                    "name": "_from",
                     "type": "address"
                 },
                 {
-                    "name": "value",
+                    "name": "_value",
                     "type": "uint256"
                 }
             ],
             "name": "burnFrom",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_spender",
+                    "type": "address"
+                },
+                {
+                    "name": "_subtractedValue",
+                    "type": "uint256"
+                }
+            ],
+            "name": "decreaseApproval",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_hash",
+                    "type": "string"
+                }
+            ],
+            "name": "getAmountByHash",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "burner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TokensBurned",
+            "type": "event"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_address",
+                    "type": "address"
+                },
+                {
+                    "name": "_amount",
+                    "type": "uint256"
+                },
+                {
+                    "name": "_hash",
+                    "type": "string"
+                }
+            ],
+            "name": "grantCoins",
             "outputs": [],
             "payable": false,
             "stateMutability": "nonpayable",
@@ -103,15 +184,15 @@ var contractABI =
             "constant": false,
             "inputs": [
                 {
-                    "name": "spender",
+                    "name": "_spender",
                     "type": "address"
                 },
                 {
-                    "name": "subtractedValue",
+                    "name": "_addedValue",
                     "type": "uint256"
                 }
             ],
-            "name": "decreaseAllowance",
+            "name": "increaseApproval",
             "outputs": [
                 {
                     "name": "",
@@ -126,75 +207,11 @@ var contractABI =
             "constant": false,
             "inputs": [
                 {
-                    "name": "_hash",
-                    "type": "string"
-                }
-            ],
-            "name": "getAmountByHash",
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [
-                {
-                    "name": "_address",
+                    "name": "_to",
                     "type": "address"
                 },
                 {
-                    "name": "_amount",
-                    "type": "uint256"
-                },
-                {
-                    "name": "_hash",
-                    "type": "string"
-                }
-            ],
-            "name": "grantCoins",
-            "outputs": [],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [
-                {
-                    "name": "spender",
-                    "type": "address"
-                },
-                {
-                    "name": "addedValue",
-                    "type": "uint256"
-                }
-            ],
-            "name": "increaseAllowance",
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "bool"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [
-                {
-                    "name": "to",
-                    "type": "address"
-                },
-                {
-                    "name": "value",
+                    "name": "_value",
                     "type": "uint256"
                 }
             ],
@@ -213,15 +230,15 @@ var contractABI =
             "constant": false,
             "inputs": [
                 {
-                    "name": "from",
+                    "name": "_from",
                     "type": "address"
                 },
                 {
-                    "name": "to",
+                    "name": "_to",
                     "type": "address"
                 },
                 {
-                    "name": "value",
+                    "name": "_value",
                     "type": "uint256"
                 }
             ],
@@ -246,11 +263,11 @@ var contractABI =
             "constant": true,
             "inputs": [
                 {
-                    "name": "owner",
+                    "name": "_owner",
                     "type": "address"
                 },
                 {
-                    "name": "spender",
+                    "name": "_spender",
                     "type": "address"
                 }
             ],
@@ -269,7 +286,7 @@ var contractABI =
             "constant": true,
             "inputs": [
                 {
-                    "name": "owner",
+                    "name": "_owner",
                     "type": "address"
                 }
             ],
@@ -357,32 +374,65 @@ var contractABI =
     ]
 ;
 
+const testNet = 'http://localhost:8545';
+const contractAddress = '0x9379c3c6d3e28257c7d897e95de220dd072b57cb';
 
-web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/22b273651d424974b7ef0de70a7ed880'));
 
+if (typeof web3 !== 'undefined') {
+    web3 = new Web3(web3.currentProvider);
+} else {
+    web3 = new Web3(new Web3.providers.HttpProvider(testNet));
+}
+var myContract = new web3.eth.Contract(contractABI, contractAddress);
 
-    // console.log(web3.version);
-    var contractAddress = '0x9379c3c6d3e28257c7d897e95de220dd072b57cb';
-    var myContract = new web3.eth.Contract(contractABI, contractAddress);
+function burnTokens( burnAmount, wAddress ) {
 
-$('.js-click-balance').on('click', function () {
-    getEthBalance(myContract, $('#ethaddr').text());
-});
+    myContract.methods.burn( burnAmount ).send({ from: wAddress }, function (error, transactionHash) {
+        if (error) {
+            console.log("err happend: " + error);
+        } else {
+            console.log("transaction Hash: " + transactionHash);
+        }
+    });
+
+}
+
+function sendFromTo( wAddress1, wAddress2, eAmount ) {
+
+    myContract.methods.transfer(wAddress2, eAmount).send({ from: wAddress1 }, function (error, transactionHash) {
+        if (error) {
+            console.log("err happend: " + error);
+        } else {
+            console.log("transaction Hash: " + transactionHash);
+        }
+    });
+
+}
+
+function getEthBalance( contract, wAddress ) {
+    contract.methods.balanceOf(wAddress).call({ from: wAddress }, function (error, result) {
+        $('#ethamount').text( result );
+        console.log(result);
+    });
+}
 
 function createEthWallet() {
     var newWalletAdress = web3.eth.accounts.wallet.create(1);
-    // console.log("the new Wallet Adress is " + newWalletAdress[0].address);
-    // console.log("the private key from that adress is " + newWalletAdress[0].privateKey);
     $('input[name="newethwallet"]').val( newWalletAdress[0].address );
     $('input[name="ethprivatekey"]').val( newWalletAdress[0].privateKey );
 }
 if ( $('input[name="newethwallet"]') && $('input[name="ethprivatekey"]') ) {
     createEthWallet();
 }
-function getEthBalance(contract, wAddress) {
-        contract.methods.balanceOf(wAddress).call({ from: wAddress }, function (error, result) {
-          //  console.log("balance of the wallet " + wAddress + " is " + result);
-         $('#ethamount').text( result );
-    });
-}
 
+$('.js-click-balance').on('click', function () {
+    getEthBalance(myContract, $('#ethaddr').text());
+});
+
+$('.js-burn-tokens').on('click', function () {
+    burnTokens( $('#burntokens').val(), $('#ethaddr').text() )
+});
+
+$('.js-send-tokens').on('click', function () {
+    sendFromTo( $('#ethaddr').text(), $('#sendto').val(), $('#sendammount').val() )
+});
