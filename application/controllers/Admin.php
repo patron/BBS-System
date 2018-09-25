@@ -78,7 +78,7 @@ class Admin extends MY_Controller {
 
         $this->load->model('bbs_model');
         $data = array(
-            'result'=>  $this->bbs_model->bbs_user_get()
+            'result'=>  $this->bbs_model->bbs_all_users_get()
         );
 
 

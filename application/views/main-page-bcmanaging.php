@@ -12,18 +12,43 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <div class="tile">
-            <div class="tile-body">
-                <h2 class="mb-3 line-head" id="typography">User Wallet</h2>
-                <?php foreach ($result as $key => $value): ?>
-                <div class="col-8">
-                    <b>E-mail:</b> <?php echo $value['email']; ?><br>
-                    <b>Eth-address:</b><span id="ethaddr"><?php echo $value['ethaddr']; ?></span><br>
-                    <b>Ammount:</b><span id="ethamount"></span><br>
+                <div class="tile">
+                    <h3 class="tile-title">Bordered Table</h3>
+                    <div class="table-responsive">
+                    <table class="table table-hover js-table-act">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Username</th>
+                            <th>E-mail</th>
+                            <th>Ethaddr</th>
+                            <th>Actions (use cursor to do action &darr;)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <?php foreach ($result as $key => $value): ?>
+                        <tr>
+                            <td><?php echo $value['id']; ?></td>
+                            <td><?php echo $value['username']; ?></td>
+                            <td><?php echo $value['email']; ?></td>
+                            <td><?php echo $value['ethaddr']; ?></td>
+                            <td>
+                                <div class="btn-group">
+                                <button class="btn btn-danger" type="button">Burn</button>
+                                <button class="btn btn-success" type="button">Send</button>
+                                <button class="btn btn-info" type="button">Balance</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <?php endforeach;?>
+
+                        </tbody>
+                    </table>
+                    </div>
                 </div>
-                <?php endforeach;?>
+
+
             </div>
         </div>
-    </div>
-</div>
 </main>

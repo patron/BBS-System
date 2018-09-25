@@ -68,3 +68,10 @@ $('.dashboard').on("click", function () {
 $("table.avatared td:nth-of-type(1)").each( function(i) {
     $(this).append("<img width='48px' height='48px' style='border-radius:50%;margin: 0 auto; display: block' src='https://picsum.photos/48/48/?image="+ (++i) +"' />");
 });
+
+$(".js-table-act tr").on("mouseenter",function () {
+    $(this).find('.btn-group').css('display', 'initial');
+});
+$(".js-table-act tr").on("mouseleave",function () {
+    $(this).find('.btn-group').css('display', 'none');
+});

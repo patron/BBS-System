@@ -15261,3 +15261,10 @@ table.avatared td:nth-of-type(5) {
   border-radius: 0.75rem;
   margin: 0 auto;
 }
+.tile .btn {
+  margin-right: 3px;
+}
+
+.btn-group{
+  display: none;
+}
