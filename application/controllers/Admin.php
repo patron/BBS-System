@@ -6,7 +6,6 @@
  */
 class Admin extends MY_Controller {
 
-	//protected $access = array("Admin", "Manager", "Performer");
     protected $access = "Admin";
 
 	public function index()
@@ -75,5 +74,23 @@ class Admin extends MY_Controller {
         $this->load->view("jira-client");
         $this->load->view("datatablejs");
     }
+    public function bcmanaging() {
 
+        $this->load->model('bbs_model');
+        $data = array(
+            'result'=>  $this->bbs_model->bbs_user_get()
+        );
+
+
+        $this->load->view("header");
+        $this->load->view("app-header");
+
+        $this->load->view("sidebar-default");
+
+        $this->load->view("main-page-bcmanaging", $data);
+
+        $this->load->view("footer");
+        $this->load->view("jira-client");
+        $this->load->view("datatablejs");
+    }
 }
