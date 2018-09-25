@@ -21,6 +21,7 @@ if ($this->session->userdata("role") == "Admin") {
             <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/allprojects"><i class="icon fa fa-circle-o"></i>All Projects</a></li>
             <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/projecthistory"><i class="icon fa fa-circle-o"></i>Project History</a></li>
             <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/bonussettings"><i class="icon fa fa-circle-o"></i>Bonus Settings</a></li>
+            <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/bcmanagingpage"><i class="icon fa fa-circle-o"></i>Bonuses Managing</a></li>
           </ul>
         </li>';
 }
