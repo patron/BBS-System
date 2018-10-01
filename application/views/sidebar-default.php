@@ -20,8 +20,9 @@ if ($this->session->userdata("role") == "Admin") {
             <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/userlist"><i class="icon fa fa-circle-o"></i>User List</a></li>
             <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/allprojects"><i class="icon fa fa-circle-o"></i>All Projects</a></li>
             <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/projecthistory"><i class="icon fa fa-circle-o"></i>Project History</a></li>
-            <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/bonussettings"><i class="icon fa fa-circle-o"></i>Bonus Settings</a></li>
+            <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/postsettings"><i class="icon fa fa-circle-o"></i>Post Settings</a></li>
             <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/bcmanaging"><i class="icon fa fa-circle-o"></i>Bonuses Managing</a></li>
+            <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/qandv"><i class="icon fa fa-circle-o"></i>Questions & Votings</a></li>
           </ul>
         </li>';
 }
@@ -30,6 +31,7 @@ elseif ($this->session->userdata("role") == "User"){
           <ul class="treeview-menu">
             <li><a class="treeview-item" href="' . base_url() . 'index.php/user/mytransactions"><i class="icon fa fa-circle-o"></i>My Transactions</a></li>
             <li><a class="treeview-item" href="' . base_url() . 'index.php/user/userwallet"><i class="icon fa fa-circle-o"></i>User Wallet</a></li>
+            <li><a class="treeview-item" href="' . base_url() . 'index.php/user/qandv"><i class="icon fa fa-circle-o"></i>Questions & Votings</a></li>
           </ul>
         </li>';
 }

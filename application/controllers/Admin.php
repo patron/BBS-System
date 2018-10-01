@@ -62,7 +62,7 @@ class Admin extends MY_Controller {
         $this->load->view("jira-client");
         $this->load->view("datatablejs");
     }
-    public function bonussettings() {
+    public function postsettings() {
         $this->load->view("header");
         $this->load->view("app-header");
 
@@ -90,7 +90,22 @@ class Admin extends MY_Controller {
         $this->load->view("main-page-bcmanaging", $data);
 
         $this->load->view("footer");
-        $this->load->view("jira-client");
-        $this->load->view("datatablejs");
+        $this->load->view("blockchain-js");
+//        $this->load->view("datatablejs");
+    }
+    public function qandv() {
+
+        $this->load->model('bbs_model');
+
+        $this->load->view("header");
+        $this->load->view("app-header");
+
+        $this->load->view("sidebar-default");
+
+        $this->load->view("main-page-qandv");
+
+        $this->load->view("footer");
+        $this->load->view("blockchain-js");
+//        $this->load->view("datatablejs");
     }
 }

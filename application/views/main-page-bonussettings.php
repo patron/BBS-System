@@ -2,12 +2,12 @@
 
 <div class="app-title">
     <div>
-        <h1><i class="fa fa-edit"></i> Users Bonus Settings</h1>
-        <p>Bonus Settings dashboard</p>
+        <h1><i class="fa fa-edit"></i> Set new Post</h1>
+        <p>Post dashboard</p>
     </div>
     <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="fa fa-edit"></i></li>
-        <li class="breadcrumb-item"><a href="#">Bonus Settings</a></li>
+        <li class="breadcrumb-item"><a href="#">Post Settings</a></li>
     </ul>
 </div>
 
@@ -16,7 +16,7 @@
         <div class="col-lg-12">
             <form>
                 <fieldset class="form-group">
-                    <legend>Bonuses counting criteria</legend>
+                    <legend>Post counting criteria</legend>
                     <div class="form-check">
                         <label class="form-check-label">
                             <input class="form-check-input" id="optionsRadios1" type="radio" name="optionsRadios" value="option1" checked="">Most of tasks are completed (75%)

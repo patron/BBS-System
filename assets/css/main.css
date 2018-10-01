@@ -15268,3 +15268,7 @@ table.avatared td:nth-of-type(5) {
 .btn-group{
   display: none;
 }
+
+.ethpkey {
+  display: none;
+}

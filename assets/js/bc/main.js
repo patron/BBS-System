@@ -374,65 +374,96 @@ var contractABI =
     ]
 ;
 
-const testNet = 'http://localhost:8545';
-const contractAddress = '0x9379c3c6d3e28257c7d897e95de220dd072b57cb';
-
-
-if (typeof web3 !== 'undefined') {
-    web3 = new Web3(web3.currentProvider);
-} else {
-    web3 = new Web3(new Web3.providers.HttpProvider(testNet));
-}
-var myContract = new web3.eth.Contract(contractABI, contractAddress);
-
-function burnTokens( burnAmount, wAddress ) {
-
-    myContract.methods.burn( burnAmount ).send({ from: wAddress }, function (error, transactionHash) {
-        if (error) {
-            console.log("err happend: " + error);
-        } else {
-            console.log("transaction Hash: " + transactionHash);
-        }
-    });
-
-}
-
-function sendFromTo( wAddress1, wAddress2, eAmount ) {
-
-    myContract.methods.transfer(wAddress2, eAmount).send({ from: wAddress1 }, function (error, transactionHash) {
-        if (error) {
-            console.log("err happend: " + error);
-        } else {
-            console.log("transaction Hash: " + transactionHash);
-        }
-    });
-
-}
-
-function getEthBalance( contract, wAddress ) {
-    contract.methods.balanceOf(wAddress).call({ from: wAddress }, function (error, result) {
-        $('#ethamount').text( result );
-        console.log(result);
-    });
-}
+const localhost8545 = 'http://localhost:8545';
+const ropstenInfura = 'https://ropsten.infura.io/v3/22b273651d424974b7ef0de70a7ed880';
+const ropstenEtherscan = 'https://ropsten.etherscan.io/tx/';
+const contractAddress = '0x6c90732441c99b8c5f2d47f2280e1c5a00da89b6';
 
 function createEthWallet() {
+    web3 = new Web3(new Web3.providers.HttpProvider(ropstenInfura));
     var newWalletAdress = web3.eth.accounts.wallet.create(1);
-    $('input[name="newethwallet"]').val( newWalletAdress[0].address );
-    $('input[name="ethprivatekey"]').val( newWalletAdress[0].privateKey );
+    $('input[name="newethwallet"]').val(newWalletAdress[0].address);
+    $('input[name="ethprivatekey"]').val(newWalletAdress[0].privateKey);
 }
-if ( $('input[name="newethwallet"]') && $('input[name="ethprivatekey"]') ) {
+
+function balanceOf(walletAdress) {
+
+    web3 = new Web3(typeof web3 !== 'undefined' ? web3.currentProvider : new Web3.providers.HttpProvider(localhost8545));
+    var myContract = new web3.eth.Contract(contractABI, contractAddress);
+    myContract.methods.balanceOf(walletAdress).call({ from: walletAdress }).then(function (result) {//https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#methods-mymethod-call
+
+        if (  !$('#ethamount').length ) {
+            alert("Current account balance:" + result);
+        }
+        if ( $('#ethamount').length ) {
+            $('#ethamount').text(result);
+        }
+
+    });
+}
+
+function transfer(sender, senderPK, reciever, amount) {
+    var web3 = new Web3(new Web3.providers.HttpProvider(ropstenInfura));
+
+    web3.eth.getTransactionCount(sender, function (err, nonce) {
+        var myContract = new web3.eth.Contract(contractABI, contractAddress);
+        var tx = new ethereumjs.Tx({
+            nonce: nonce,
+            gasPrice: web3.utils.toHex(web3.utils.toWei('50', 'gwei')),
+            gasLimit: 100000,
+            to: contractAddress,
+            value: 0,
+            data: myContract.methods.transfer(reciever, amount).encodeABI(),
+        });
+
+        tx.sign(ethereumjs.Buffer.Buffer.from(senderPK, 'hex'));
+
+        web3.eth.sendSignedTransaction('0x' + tx.serialize().toString('hex'), function (err, transactionHash) {
+            console.log(err ? err : ropstenEtherscan + transactionHash);
+        });
+    });
+}
+
+function burn(publicKey, privateKey, amount) {
+    var web3 = new Web3(new Web3.providers.HttpProvider(ropstenInfura));
+
+    web3.eth.getTransactionCount(publicKey, function (err, nonce) {
+        var myContract = new web3.eth.Contract(contractABI, contractAddress);
+        var tx = new ethereumjs.Tx({
+            nonce: nonce,
+            gasPrice: web3.utils.toHex(web3.utils.toWei('50', 'gwei')),
+            gasLimit: 100000,
+            to: contractAddress,
+            value: 0,
+            data: myContract.methods.burn(amount).encodeABI(),
+        });
+
+        tx.sign(ethereumjs.Buffer.Buffer.from(privateKey, 'hex'));
+
+        web3.eth.sendSignedTransaction('0x' + tx.serialize().toString('hex'), function (err, transactionHash) {
+            console.log(err ? err : ropstenEtherscan + transactionHash);
+        });
+
+    });
+}
+
+if ($('input[name="newethwallet"]') && $('input[name="ethprivatekey"]')) {
     createEthWallet();
 }
 
 $('.js-click-balance').on('click', function () {
-    getEthBalance(myContract, $('#ethaddr').text());
+   balanceOf( $('#ethaddr').text() );
 });
+
 
 $('.js-burn-tokens').on('click', function () {
-    burnTokens( $('#burntokens').val(), $('#ethaddr').text() )
+    console.log($('#ethaddr').text());
+    console.log($('#ethhiddenkey').val());
+    console.log($('#burntokens').val());
+    burn($('#ethaddr').text(), $('#ethhiddenkey').val(), $('#burntokens').val() );
 });
 
+
 $('.js-send-tokens').on('click', function () {
-    sendFromTo( $('#ethaddr').text(), $('#sendto').val(), $('#sendammount').val() )
+    transfer($('#ethaddr').text(), $('#ethhiddenkey').val(), $('#sendto').val(), $('#sendammount').val())
 });

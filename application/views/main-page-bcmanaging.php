@@ -29,10 +29,11 @@
 
                         <?php foreach ($result as $key => $value): ?>
                         <tr>
-                            <td><?php echo $value['id']; ?></td>
-                            <td><?php echo $value['username']; ?></td>
-                            <td><?php echo $value['email']; ?></td>
-                            <td><?php echo $value['ethaddr']; ?></td>
+                            <td class="ethid"><?php echo $value['id']; ?></td>
+                            <td class="ethuname"><?php echo $value['username']; ?></td>
+                            <td class="ethemail"><?php echo $value['email']; ?></td>
+                            <td class="ethaddr"><?php echo $value['ethaddr']; ?></td>
+                            <td class="ethpkey"><?php echo $value['ethpkey']; ?></td>
                             <td>
                                 <div class="btn-group">
                                 <button class="btn btn-danger" type="button">Burn</button>

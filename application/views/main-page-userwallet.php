@@ -20,6 +20,7 @@
                     <b>E-mail:</b> <?php echo $value['email']; ?><br>
                     <b>Eth-address:</b><span id="ethaddr"><?php echo $value['ethaddr']; ?></span><br>
                     <b>Ammount:</b><span id="ethamount"></span><br>
+                    <input type="hidden" id="ethhiddenkey" value="<?php echo $value['ethpkey']; ?>">
                     <div class="form-group">
                         <label class="col-form-label col-form-label-sm" for="inputSmall">Send to</label>
                         <input class="form-control form-control-sm" id="sendto" type="text">
