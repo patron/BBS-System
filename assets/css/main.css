@@ -15272,3 +15272,7 @@ table.avatared td:nth-of-type(5) {
 .ethpkey {
   display: none;
 }
+
+.selectedToSend {
+  background: #eee;
+}

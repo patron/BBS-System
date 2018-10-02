@@ -37,7 +37,7 @@
                             <td>
                                 <div class="btn-group">
                                 <button class="btn btn-danger" type="button">Burn</button>
-                                <button class="btn btn-success" type="button">Send</button>
+                                <button class="btn btn-success" type="button">Send From</button>
                                 <button class="btn btn-info" type="button">Balance</button>
                                 </div>
                             </td>

@@ -82,28 +82,46 @@ $(".js-table-act tr").find('.btn-danger').on("click",function () {
     burn($(this).closest('.js-table-act tr').find('td.ethaddr').text(), $(this).closest('.js-table-act tr').find('td.ethpkey').text(),toBurn);
 });
 
- $(".js-table-act tr").find('.btn-success').on("click",function () {
-     var sendFrom = prompt("Enter account to send from:");
-     var sendTo = prompt("Enter account to send to:");
-     var sendAmount = prompt("Enter amount of tokens to send:");
-
-     transfer( senderWallet , $(this).closest('.js-table-act tr').find('td.ethaddr').text(), senderKey ,amount );
- });
+ // $(".js-table-act tr").find('.btn-success').on("click",function () {
+ //     var sendFrom = prompt("Enter account to send from:");
+ //     var sendTo = prompt("Enter account to send to:");
+ //     var sendAmount = prompt("Enter amount of tokens to send:");
+ //
+ //     transfer( senderWallet , $(this).closest('.js-table-act tr').find('td.ethaddr').text(), senderKey ,amount );
+ // });
 
 $(".js-table-act tr .btn-info").on("click",function () {
     balanceOf( $(this).closest('.js-table-act tr').find('td.ethaddr').text() );
 });
 
+
+// $(".js-table-act tr .btn-success").on("click",function () {
+//
+//     var senderWallet = prompt("Type sender wallet:");
+//     var amount = prompt("Type tokens amount:");
+//     var senderKey = prompt("Type sender key:");
+//
+//     console.log('Eth-pkey:' + senderKey);
+//     console.log('Sender wallet:' + senderWallet);
+//     console.log('Wallet to send:' + $(this).closest('.js-table-act tr').find('td.ethaddr').text());
+//     console.log('Ammount to send:' + amount);
+//
+//     transfer( senderWallet, senderKey, $(this).closest('.js-table-act tr').find('td.ethaddr').text(), amount );
+// });
+
+
 $(".js-table-act tr .btn-success").on("click",function () {
 
-    var senderWallet = prompt("Type sender wallet:");
-    var amount = prompt("Type tokens amount:");
-    var senderKey = prompt("Type sender key:");
+    $(".selectedToSend").removeClass('selectedToSend');
+    $(this).closest('.js-table-act tr').addClass('selectedToSend');
+     console.log('Eth-pkey:' + $(this).closest('.js-table-act tr').find('td.ethpkey').text());
+     console.log('Sender wallet:' + $(this).closest('.js-table-act tr').find('td.ethaddr').text());
+    var senderWallet = $(this).closest('.js-table-act tr').find('td.ethaddr').text();
+    var senderPkey = $(this).closest('.js-table-act tr').find('td.ethpkey').text();
 
-    console.log('Eth-pkey:' + $(this).closest('.js-table-act tr').find('td.ethpkey').text());
-    console.log('Sender wallet:' + senderWallet);
-    console.log('Wallet to send:' + $(this).closest('.js-table-act tr').find('td.ethaddr').text());
-    console.log('Ammount to send:' + amount);
+    $('.js-table-act tr .btn-success').each( function( ) {
+        $(this).text('Send to');
+    })
 
-    transfer( senderWallet , $(this).closest('.js-table-act tr').find('td.ethaddr').text(), senderKey ,amount );
+
 });
