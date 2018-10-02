@@ -52,5 +52,20 @@ class User extends MY_Controller {
         $this->load->view("blockchain-js");
 
 	}
+    public function qandv() {
+
+        $this->load->model('bbs_model');
+
+        $this->load->view("header");
+        $this->load->view("app-header");
+
+        $this->load->view("sidebar-default");
+
+        $this->load->view("main-page-qandv");
+
+        $this->load->view("footer");
+        $this->load->view("blockchain-js");
+//        $this->load->view("datatablejs");
+    }
 }
 

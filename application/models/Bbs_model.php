@@ -13,6 +13,13 @@ class Bbs_model extends CI_Model {
         return $this->db->get()->result_array();
     }
 
+    public function bbs_all_users_get(){
+        $this->db->select('*');
+        $this->db->from('usertable');
+        return $this->db->get()->result_array();
+    }
+
+
 	public function get_data()
 	{
 		return $this->_data;

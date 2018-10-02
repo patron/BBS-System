@@ -20,10 +20,27 @@
                     <b>E-mail:</b> <?php echo $value['email']; ?><br>
                     <b>Eth-address:</b><span id="ethaddr"><?php echo $value['ethaddr']; ?></span><br>
                     <b>Ammount:</b><span id="ethamount"></span><br>
+                    <input type="hidden" id="ethhiddenkey" value="<?php echo $value['ethpkey']; ?>">
+                    <div class="form-group">
+                        <label class="col-form-label col-form-label-sm" for="inputSmall">Send to</label>
+                        <input class="form-control form-control-sm" id="sendto" type="text">
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label class="col-form-label col-form-label-sm" for="inputSmall">Send amount</label>
+                        <input class="form-control form-control-sm" id="sendammount" type="text">
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label class="col-form-label col-form-label-sm" for="inputSmall">Burn amount</label>
+                        <input class="form-control form-control-sm" id="burntokens" type="text">
+                    </div>
                 </div>
                 <?php endforeach;?>
                 <div class="tile-footer">
                     <button class="btn btn-primary js-click-balance" type="submit">Get User Balance</button>
+                    <button class="btn btn-primary js-burn-tokens" type="submit">Burn some tokens</button>
+                    <button class="btn btn-primary js-send-tokens" type="submit">Send some tokens</button>
                 </div>
             </div>
         </div>
