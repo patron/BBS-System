@@ -13,7 +13,7 @@
 <div class="row">
     <div class="col-md-12">
                 <div class="tile">
-                    <h3 class="tile-title">Bordered Table</h3>
+                    <h3 class="tile-title">Etherium Users Table</h3>
                     <div class="table-responsive">
                     <table class="table table-hover js-table-act">
                         <thead>
