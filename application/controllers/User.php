@@ -5,7 +5,7 @@
  * for Manager group only
  */
 class User extends MY_Controller {
-//protected $access = array("Admin", "Manager", "Performer");
+//protected $access = array("Bbsadmin", "Manager", "Performer");
 
 	protected $access = "User";
 

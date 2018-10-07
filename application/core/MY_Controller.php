@@ -5,7 +5,7 @@ class MY_Controller extends CI_Controller {
 	/**
 	 * '*' all user
 	 * '@' logged in user
-	 * 'Admin' for admin
+	 * 'Bbsadmin' for admin
 	 * 'Performer' for performer group
 	 * 'Manager' for manager group
 	 * @var string

@@ -2,11 +2,11 @@
 
 /**
  * This controller can be accessed 
- * for Admin group only
+ * for Bbsadmin group only
  */
-class Admin extends MY_Controller {
+class Bbsadmin extends MY_Controller {
 
-    protected $access = "Admin";
+    protected $access = "Bbsadmin";
 
 	public function index()
 	{
@@ -26,7 +26,7 @@ class Admin extends MY_Controller {
         $this->load->view("header");
         $this->load->view("app-header");
 
-      $this->load->view("sidebar-default");
+        $this->load->view("sidebar-default");
 
 
         $this->load->view("main-page-userlist");

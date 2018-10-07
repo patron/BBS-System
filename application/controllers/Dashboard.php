@@ -6,7 +6,7 @@
  */
 class Dashboard extends MY_Controller {
 
-    protected $access = array("Admin", "User");
+    protected $access = array("Bbsadmin", "User");
 
 	public function index()
 	{

@@ -14,15 +14,15 @@
     </a></li>
 <?php
 
-if ($this->session->userdata("role") == "Admin") {
-    echo '<li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Admin Menu</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+if ($this->session->userdata("role") == "Bbsadmin") {
+    echo '<li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Bbsadmin Menu</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/userlist"><i class="icon fa fa-circle-o"></i>User List</a></li>
-            <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/allprojects"><i class="icon fa fa-circle-o"></i>All Projects</a></li>
-            <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/projecthistory"><i class="icon fa fa-circle-o"></i>Project History</a></li>
-            <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/postsettings"><i class="icon fa fa-circle-o"></i>Post Settings</a></li>
-            <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/bcmanaging"><i class="icon fa fa-circle-o"></i>Bonuses Managing</a></li>
-            <li><a class="treeview-item" href="' . base_url() . 'index.php/admin/qandv"><i class="icon fa fa-circle-o"></i>Questions & Votings</a></li>
+            <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsadmin/userlist"><i class="icon fa fa-circle-o"></i>User List</a></li>
+            <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsadmin/allprojects"><i class="icon fa fa-circle-o"></i>All Projects</a></li>
+            <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsadmin/projecthistory"><i class="icon fa fa-circle-o"></i>Project History</a></li>
+            <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsadmin/postsettings"><i class="icon fa fa-circle-o"></i>Post Settings</a></li>
+            <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsadmin/bcmanaging"><i class="icon fa fa-circle-o"></i>Bonuses Managing</a></li>
+            <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsadmin/qandv"><i class="icon fa fa-circle-o"></i>Questions & Votings</a></li>
           </ul>
         </li>';
 }
