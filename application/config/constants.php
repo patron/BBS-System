@@ -98,6 +98,6 @@ define('JIRA_PORT', 8080);
 define('TBL_CATEGORIES', 'cibb_categories');
 define('TBL_POSTS',      'cibb_posts');
 define('TBL_THREADS',    'cibb_threads');
-define('TBL_USERS',      'cibb_users');
+define('TBL_USERS',      'usertable');
 define('TBL_ROLES',      'cibb_roles');
 define('CIBB_TITLE',     ' &mdash; CIBB Forum');

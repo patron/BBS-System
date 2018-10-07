@@ -14,15 +14,15 @@ class Auth extends MY_Controller {
 	}
 
 	public function index()
-	{	
+	{
 		$this->logged_in_check();
-		
+
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules("username", "Username", "trim|required");
 		$this->form_validation->set_rules("password", "Password", "trim|required");
-		if ($this->form_validation->run() == true) 
+		if ($this->form_validation->run() == true)
 		{
-			$this->load->model('auth_model', 'auth');	
+			$this->load->model('auth_model', 'auth');
 			// check the username & password of user
 			$status = $this->auth->validate();
             if ($status == JIRA_CURRENTLY_DOWN) {
@@ -42,6 +42,31 @@ class Auth extends MY_Controller {
             }
 			else
 			{
+                $username = $this->input->post('username');
+
+                $data = array('username' => $username);
+
+                $query = $this->db->get_where(TBL_USERS, $data);
+
+//                if ( ($query->num_rows() == 1) ) {
+//                    $user = $query->row();
+//
+//                }
+
+                // if user found
+                $row = $query->row();
+                $this->session->set_userdata('cibb_logged_in', 1);
+                $this->session->set_userdata('cibb_user_id'  , $row->id);
+                $this->session->set_userdata('cibb_username' , $row->username);
+                $this->session->set_userdata('cibb_user_roleid' , $row->role_id);
+
+                // get roles
+                $roles = $this->db->get_where(TBL_ROLES, array('id' => $row->role_id))->row_array();
+                foreach ((array)$roles as $key => $value) {
+                    $this->session->set_userdata($key, $value);
+                }
+
+
 				// success
 				// store the user data to session
 				$this->session->set_userdata($this->auth->get_data());
@@ -51,9 +76,9 @@ class Auth extends MY_Controller {
 			}
 		}
 
-		$this->load->view("header");		
+		$this->load->view("bbsheader");
 		$this->load->view("auth");
-		$this->load->view("footer");
+		$this->load->view("bbsfooter");
         $this->load->view("blockchain-js");
 	}
 

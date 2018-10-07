@@ -10,7 +10,7 @@ class Bbsadmin extends MY_Controller {
 
 	public function index()
 	{
-		$this->load->view("header");
+		$this->load->view("bbsheader");
         $this->load->view("app-header");
 
         $this->load->view("sidebar-default");
@@ -18,12 +18,12 @@ class Bbsadmin extends MY_Controller {
 
         $this->load->view("main-page-pfeedback");
 
-		$this->load->view("footer");
+		$this->load->view("bbsfooter");
         $this->load->view("jira-client");
 	}
 
     public function userlist() {
-        $this->load->view("header");
+        $this->load->view("bbsheader");
         $this->load->view("app-header");
 
         $this->load->view("sidebar-default");
@@ -32,45 +32,45 @@ class Bbsadmin extends MY_Controller {
         $this->load->view("main-page-userlist");
 
 
-        $this->load->view("footer");
+        $this->load->view("bbsfooter");
         $this->load->view("jira-client");
         $this->load->view("datatablejs");
     }
 
     public function projecthistory() {
-        $this->load->view("header");
+        $this->load->view("bbsheader");
         $this->load->view("app-header");
 
         $this->load->view("sidebar-default");
         $this->load->view("main-page-projecthistory");
 
 
-        $this->load->view("footer");
+        $this->load->view("bbsfooter");
         $this->load->view("jira-client");
         $this->load->view("datatablejs");
     }
 
     public function allprojects() {
-        $this->load->view("header");
+        $this->load->view("bbsheader");
         $this->load->view("app-header");
 
         $this->load->view("sidebar-default");
 
         $this->load->view("main-page-allprojects");
 
-        $this->load->view("footer");
+        $this->load->view("bbsfooter");
         $this->load->view("jira-client");
         $this->load->view("datatablejs");
     }
     public function postsettings() {
-        $this->load->view("header");
+        $this->load->view("bbsheader");
         $this->load->view("app-header");
 
         $this->load->view("sidebar-default");
 
         $this->load->view("main-page-bonussettings");
 
-        $this->load->view("footer");
+        $this->load->view("bbsfooter");
         $this->load->view("jira-client");
         $this->load->view("datatablejs");
     }
@@ -82,14 +82,14 @@ class Bbsadmin extends MY_Controller {
         );
 
 
-        $this->load->view("header");
+        $this->load->view("bbsheader");
         $this->load->view("app-header");
 
         $this->load->view("sidebar-default");
 
         $this->load->view("main-page-bcmanaging", $data);
 
-        $this->load->view("footer");
+        $this->load->view("bbsfooter");
         $this->load->view("blockchain-js");
 //        $this->load->view("datatablejs");
     }
@@ -97,14 +97,14 @@ class Bbsadmin extends MY_Controller {
 
         $this->load->model('bbs_model');
 
-        $this->load->view("header");
+        $this->load->view("bbsheader");
         $this->load->view("app-header");
 
         $this->load->view("sidebar-default");
 
         $this->load->view("main-page-qandv");
 
-        $this->load->view("footer");
+        $this->load->view("bbsfooter");
         $this->load->view("blockchain-js");
 //        $this->load->view("datatablejs");
     }

@@ -10,7 +10,7 @@ class Dashboard extends MY_Controller {
 
 	public function index()
 	{
-		$this->load->view("header");
+		$this->load->view("bbsheader");
         $this->load->view("app-header");
 
         $this->load->view("sidebar-default");
@@ -18,7 +18,7 @@ class Dashboard extends MY_Controller {
         $this->load->view("main-page-dashboard");
 
 		//$this->load->view("dashboard");
-		$this->load->view("footer");
+		$this->load->view("bbsfooter");
         $this->load->view("jira-client");
 	}
 
