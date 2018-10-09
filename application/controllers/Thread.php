@@ -27,7 +27,7 @@ class Thread extends MY_Controller {
         $this->set_pagination();
         
         $this->pagination->initialize($this->page_config);
-        print_r($this->session->all_userdata());
+        // print_r($this->session->all_userdata());
         $this->data['type']    = 'index';
         $this->data['page']    = $this->pagination->create_links();
         $this->data['threads'] = $this->thread_model->get_all($start, $this->page_config['per_page']);
@@ -58,7 +58,7 @@ class Thread extends MY_Controller {
         $this->data['title']  = ' Thread Create '.CIBB_TITLE;
         $this->load->view('header', $this->data);
         $this->load->view('thread/create');
-        $this->load->view('bbsfooter');
+        $this->load->view('footer');
     }
     
     public function set_pagination()
@@ -176,7 +176,7 @@ class Thread extends MY_Controller {
         $this->data['title']   = 'Category :: '.$category->name.CIBB_TITLE;
         $this->load->view('header', $this->data);
         $this->load->view('thread/index');
-        $this->load->view('bbsfooter');
+        $this->load->view('footer');
 
     }
 }
