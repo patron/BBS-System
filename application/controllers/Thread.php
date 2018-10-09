@@ -137,7 +137,7 @@ class Thread extends CI_Controller {
         
         $this->load->view('header', $this->data);
         $this->load->view('thread/talk');
-        $this->load->view('bbsfooter');
+        $this->load->view('footer');
     }
     
     public function category($slug, $start = 0)

@@ -9,19 +9,6 @@ protected $access = array("Bbsadmin", "User");
 
 //	protected $access = "User";
 
-
-//	public function index()
-//	{
-//		$this->load->view("bbsheader");
-//        $this->load->view("app-header");
-//
-//        $this->load->view("sidebar-default");
-//
-//
-//        $this->load->view("main-page-allprojects");
-//
-//		$this->load->view("bbsfooter");
-//	}
     public function mytransactions() {
         $this->load->view("bbsheader");
         $this->load->view("app-header");
