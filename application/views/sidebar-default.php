@@ -32,6 +32,7 @@ elseif ($this->session->userdata("role") == "Bbsuser"){
             <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsuser/mytransactions"><i class="icon fa fa-circle-o"></i>My Transactions</a></li>
             <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsuser/userwallet"><i class="icon fa fa-circle-o"></i>Bbsuser Wallet</a></li>
             <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsuser/qandv"><i class="icon fa fa-circle-o"></i>Questions & Votings</a></li>
+            <li><a class="treeview-item" href="' . base_url() . 'index.php/thread"><i class="icon fa fa-circle-o"></i>Questions & Votings</a></li>
           </ul>
         </li>';
 }

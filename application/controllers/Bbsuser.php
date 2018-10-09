@@ -37,7 +37,7 @@ protected $access = array("Bbsadmin", "Bbsuser");
         $this->load->view("bbsfooter");
         $this->load->view("datatablejs");
         $this->load->view("blockchain-js");
-
+        print_r($this->session->all_userdata());
 	}
     public function qandv() {
 

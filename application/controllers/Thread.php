@@ -1,9 +1,12 @@
 <?php
 
-class Thread extends CI_Controller {
+class Thread extends MY_Controller {
     public $data         = array();
     public $page_config  = array();
-    
+
+    protected $access = array("Bbsadmin", "Bbsuser");
+
+
     public function __construct() 
     {
         parent::__construct();
@@ -24,7 +27,7 @@ class Thread extends CI_Controller {
         $this->set_pagination();
         
         $this->pagination->initialize($this->page_config);
-        
+        print_r($this->session->all_userdata());
         $this->data['type']    = 'index';
         $this->data['page']    = $this->pagination->create_links();
         $this->data['threads'] = $this->thread_model->get_all($start, $this->page_config['per_page']);
@@ -174,5 +177,6 @@ class Thread extends CI_Controller {
         $this->load->view('header', $this->data);
         $this->load->view('thread/index');
         $this->load->view('bbsfooter');
+
     }
 }

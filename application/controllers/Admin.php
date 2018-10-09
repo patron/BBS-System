@@ -1,9 +1,11 @@
 <?php
 
-class Admin extends CI_Controller {    
+class Admin extends MY_Controller {
     public $data         = array();
     public $page_config  = array();
-    
+
+
+    protected $access = array("Bbsadmin", "Bbsuser");
     public function __construct() 
     {
         parent::__construct();

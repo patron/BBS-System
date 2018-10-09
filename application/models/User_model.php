@@ -16,9 +16,9 @@ class User_model extends CI_Model {
         if ($user_id) {
             $row = $this->db->get_where(TBL_USERS, array('id' => $user_id))->row();
             $roles = $this->db->get_where(TBL_ROLES, array('id' => $row->role_id))->row_array();
-            foreach ((array)$roles as $key => $value) {
-                $this->session->set_userdata($key, $value);
-            }
+//            foreach ((array)$roles as $key => $value) {
+//                $this->session->set_userdata($key, $value);
+//            }
         }
     }
     
