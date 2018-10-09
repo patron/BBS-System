@@ -35,7 +35,7 @@ class Auth extends MY_Controller {
 				$this->session->set_flashdata("error", "Password is invalid");
 			}
             elseif ($status == ADD_JIRA_USER_SUCCESS) {
-                $this->session->set_flashdata("error", "User is registered. Now you can login!");
+                $this->session->set_flashdata("error", "Bbsuser is registered. Now you can login!");
             }
             elseif ($status == INVALID_CREDEINTIALS) {
                 $this->session->set_flashdata("error", "Invalid credentials or does'nt exist :(");

@@ -12,7 +12,7 @@
             <input type="hidden" name="ethprivatekey">
             <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN OR REGISTER</h3>
         <?php $error = $this->session->flashdata("error"); ?>
-        <div class="alert alert-<?php echo $error != NULL && $error != "User is registered. Now you can login!" ? 'warning' : 'info' ?> alert-dismissible" role="alert">
+        <div class="alert alert-<?php echo $error != NULL && $error != "Bbsuser is registered. Now you can login!" ? 'warning' : 'info' ?> alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <?php echo $error ? $error : 'Enter your username and password' ?>
         </div>

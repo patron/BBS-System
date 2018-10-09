@@ -50,7 +50,7 @@ class User_model extends CI_Model {
                 $this->session->set_userdata($key, $value);
             }
         } else {
-            $this->error['login'] = 'User not found';
+            $this->error['login'] = 'Bbsuser not found';
             $this->error_count = 1;
         }
     }
