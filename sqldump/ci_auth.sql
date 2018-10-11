@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 07 2018 г., 22:29
+-- Время создания: Окт 11 2018 г., 17:46
 -- Версия сервера: 5.6.38
 -- Версия PHP: 7.1.12
 
@@ -135,7 +135,16 @@ INSERT INTO `cibb_posts` (`id`, `thread_id`, `reply_to_id`, `author_id`, `post`,
 (89, 2, 0, 5, 'fghfghfgh', '2012-08-15 04:40:45', '0000-00-00 00:00:00'),
 (90, 9, 61, 5, 'which can be edited manually. I want to add/remove php values from \r\nanother div having a set of php array values (from a query). Each value \r\nhave an [Add', '2012-08-15 07:30:44', '0000-00-00 00:00:00'),
 (91, 13, 0, 5, 'yytyu', '2012-12-02 03:23:57', '0000-00-00 00:00:00'),
-(92, 13, 87, 5, '<div style=\"font-size:11px; background: #e3e3e3;padding:5px;\">posted by <b>@admin</b><p><i>I am trying to create a schedule for a Tae Kwon Do school, and I would like the admins to be able to CRUD their table .This is how I would like for it to look:</i></p></div><br>iuiyio', '2012-12-02 03:24:08', '0000-00-00 00:00:00');
+(92, 13, 87, 5, '<div style=\"font-size:11px; background: #e3e3e3;padding:5px;\">posted by <b>@admin</b><p><i>I am trying to create a schedule for a Tae Kwon Do school, and I would like the admins to be able to CRUD their table .This is how I would like for it to look:</i></p></div><br>iuiyio', '2012-12-02 03:24:08', '0000-00-00 00:00:00'),
+(93, 13, 0, 1, '1234dghjm', '2018-10-08 00:57:39', '0000-00-00 00:00:00'),
+(94, 13, 0, 1, '777888', '2018-10-08 01:05:30', '0000-00-00 00:00:00'),
+(95, 14, 0, 1, 'Hello blockchain', '2018-10-08 10:12:08', '0000-00-00 00:00:00'),
+(96, 14, 0, 1, 'ftdgdg', '2018-10-09 11:25:41', '0000-00-00 00:00:00'),
+(97, 15, 0, 3, 'hello forum', '2018-10-10 12:01:56', '0000-00-00 00:00:00'),
+(98, 15, 97, 3, '<div style=\"font-size:11px; background: #e3e3e3;padding:5px;\">posted by <b>@Admin</b><p><i>hello forum</i></p></div><br>7777', '2018-10-10 12:02:01', '0000-00-00 00:00:00'),
+(99, 16, 0, 3, 'adsfadsf', '2018-10-11 17:38:16', '0000-00-00 00:00:00'),
+(100, 16, 0, 3, 'dvcsadfsadfsa', '2018-10-11 17:42:20', '0000-00-00 00:00:00'),
+(101, 16, 100, 3, '<div style=\"font-size:11px; background: #e3e3e3;padding:5px;\">posted by <b>@Admin</b><p><i>dvcsadfsadfsa</i></p></div><br>', '2018-10-11 17:42:23', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -163,7 +172,7 @@ CREATE TABLE `cibb_roles` (
 --
 
 INSERT INTO `cibb_roles` (`id`, `role`, `admin_area`, `thread_create`, `thread_edit`, `thread_delete`, `post_create`, `post_edit`, `post_delete`, `role_create`, `role_edit`, `role_delete`) VALUES
-(2, 'administrator', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+(2, 'Bbsadmin', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 (3, 'member', 0, 1, 0, 0, 1, 0, 0, 0, 0, 0),
 (4, 'editor', 0, 0, 1, 1, 0, 1, 1, 0, 0, 0),
 (5, 'test', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0);
@@ -192,14 +201,16 @@ INSERT INTO `cibb_threads` (`id`, `category_id`, `title`, `slug`, `date_add`, `d
 (2, 19, 'Need help for forum styling using phpBB', 'need-help-for-forum-styling-using-phpbb', '2012-08-04 05:25:16', '0000-00-00 00:00:00', '2012-08-04 05:25:16'),
 (3, 12, 'Format mysql datetime with php', 'format-mysql-datetime-with-php', '2012-08-06 06:18:59', '0000-00-00 00:00:00', '2012-08-06 06:18:59'),
 (4, 12, 'Convert one date format into another in PHP', 'convert-one-date-format-into-another-in-php', '2012-08-06 06:19:38', '0000-00-00 00:00:00', '2012-08-06 06:19:38'),
-(5, 12, 'Is my php regular expression right?', 'is-my-php-regular-expression-right?', '2012-08-07 12:53:33', '0000-00-00 00:00:00', '2012-08-07 12:53:33'),
 (6, 18, 'Fluid images in table - Width: CSS vs HTML', 'fluid-images-in-table---width:-css-vs-html', '2012-08-07 13:11:09', '0000-00-00 00:00:00', '2012-08-07 13:11:09'),
 (7, 12, 'How to add RDoc documentation for a method defined using class_eval?', 'how-to-add-rdoc-documentation-for-a-method-defined-using-classeval', '2012-08-13 06:33:48', '0000-00-00 00:00:00', '2012-08-13 06:33:48'),
 (9, 11, 'transfer (add/remove) php array values between 2 divs', 'transfer-addremove-php-array-values-between-2-divs', '2012-08-13 06:38:03', '0000-00-00 00:00:00', '2012-08-13 06:38:03'),
 (10, 11, 'Creating an associative array from PHP through AJAX in JQUERY', 'creating-an-associative-array-from-php-through-ajax-in-jquery', '2012-08-13 06:38:42', '0000-00-00 00:00:00', '2012-08-13 06:38:42'),
 (11, 12, 'Codeigniter - controllers in subfolder, remove index.php from url', 'codeigniter--controllers-in-subfolder-remove-indexphp-from-url', '2012-08-13 07:16:03', '0000-00-00 00:00:00', '2012-08-13 07:16:03'),
 (12, 13, '10-custom-controls.html', '10customcontrolshtml', '2012-08-14 06:15:57', '0000-00-00 00:00:00', '2012-08-14 06:15:57'),
-(13, 13, 'Multiple forms in tables, multiple submit buttons. Can I do it with just PHP and HTML?', 'multiple-forms-in-tables-multiple-submit-buttons-can-i-do-it-with-just-php-and-html', '2012-08-14 06:43:59', '0000-00-00 00:00:00', '2012-08-14 06:43:59');
+(13, 13, 'Multiple forms in tables, multiple submit buttons. Can I do it with just PHP and HTML?', 'multiple-forms-in-tables-multiple-submit-buttons-can-i-do-it-with-just-php-and-html', '2012-08-14 06:43:59', '0000-00-00 00:00:00', '2012-08-14 06:43:59'),
+(14, 23, 'Blockchain ', 'blockchain-', '2018-10-08 10:12:08', '0000-00-00 00:00:00', '2018-10-08 10:12:08'),
+(15, 23, 'Test thread for udc', 'test-thread-for-udc', '2018-10-10 12:01:56', '0000-00-00 00:00:00', '2018-10-10 12:01:56'),
+(16, 14, 'Blockchain ', 'blockchain-21', '2018-10-11 17:38:16', '0000-00-00 00:00:00', '2018-10-11 17:38:16');
 
 -- --------------------------------------------------------
 
@@ -211,7 +222,7 @@ CREATE TABLE `usertable` (
   `id` int(10) UNSIGNED NOT NULL,
   `username` varchar(30) DEFAULT NULL,
   `password` varchar(70) DEFAULT NULL,
-  `role` enum('Bbsadmin','User') DEFAULT NULL,
+  `role` enum('Bbsadmin','Bbsuser') DEFAULT NULL,
   `fullname` varchar(70) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `ethaddr` varchar(42) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -224,14 +235,14 @@ CREATE TABLE `usertable` (
 --
 
 INSERT INTO `usertable` (`id`, `username`, `password`, `role`, `fullname`, `email`, `ethaddr`, `ethpkey`, `role_id`) VALUES
-(1, 'user1', '$2y$12$R3/UQn8upDpWrH0ABjr7EuLriZDHTBuddWMtuR63zqxEz/MCljFrW', 'User', 'User1', 'bbsjirauser1@gmail.com', '0x5e042fbab85df501dffb0aad30e159d15bb388bd', 'd3a8ec53b34da61c8e5e00ed5445424421cab147e9ffcc1c649ffa1a0a968ed5', 0),
-(2, 'user2', '$2y$12$ETZ435g8qqsemAbNfc0ZreR7XCSrPGEeVgUnnlECuGu5dMsEbgwQ2', 'User', 'User2', 'userrbi2@hotmail.com', '0xE7253fe2834559604dc917Cbe8420301912d0445', '0BE41454D39278B39482EF100EF379D7A24D97B4AB34348F562D2DA4B28DDA95', 0),
-(3, 'Admin', '$2y$12$oFvEgcdhBiyWRHZe7F8v.uArnVJ6JKh9lt7gOmXagDaJXXRiH.XNa', 'Bbsadmin', 'Alexey Grigoriev', 'st.graalex@gmail.com', '0x47f8fb893E7f40AD9E1DDfFD46830949039C050B', '08bd1926ade5f2b48a6b0092253c328bc6c6f46e8dc393898ccddc8b3ce6933e', 0),
-(5, 'user3', '$2y$12$MzLA1834sk5d/rGEjHXeIegbQHA3LAtm/KETqXcXeifAB7b6VK.W2', 'User', 'User3', 'userer3@yahoo.com', '0x2031A5EA6c6dC2cb69D0A148378118294A5b3904', '54023b1da8a3a05eb4398c70307afb32b13c640dab77651011e5e716570df0f0', 0),
-(6, 'salim', '$2y$12$ZgN7Nf3yYLdDagpbnJtL/OhUedwYlOxYoxpv7vXjX7QU3/XXz9LxG', 'User', 'Sasha Koen', 'salim@salimov.com', '0xC756aA55A4b6F69d0C4638523bF9b9bf34BA81a6', 'f663a14a902c0b26318d34f2c8e9c5fc3c7e994b741c8945301c14861a3592a1', 0),
-(7, 'Amic', '$2y$12$t4j0QHLoai.SLS68qRD79Oc8x1vlnCcYe3OLMd8ZEhu0NfQ6IJ0OO', 'User', 'Michael Anzheurov', 'amic@gmail.com', '0x3aBF8Ec7aA6B4cC606022d58B6ed2513d4f90615', '17f8b74b3388e3630c928fb740d79b54c35715767d6a59512926eaced175ce07', 0),
-(8, 'pservit', '$2y$12$EkuRjg.m6gETfSeKAZA9W.1rqbybni2rQ1ZRljkS8b2gmu/5TGGUG', 'User', 'Sergey Prihodko', 'serj@somemail.com', '0x577a6b470A2a573B42F06Ba3EBD3f51B79e330e5', 'e82846e02f1088facca8423024e12d948992ec2e2e100ddf835fde205b679773', 0),
-(9, 'Maximus', '$2y$12$GyU4hJghOyN6uLdqOGiGeuaNADu6T4.9bH999GLuJq6.eRrt6hwKm', 'User', 'Maxim Girilishen', 'max@maximail.com', '0x55538f847cE465bC427CE66e3DE4CaA994461Cfa', 'a91fcd97ce022f86166a34690d9998ac078d28989c86fae22c59afa8773fa776', 0);
+(1, 'user1', '$2y$12$R3/UQn8upDpWrH0ABjr7EuLriZDHTBuddWMtuR63zqxEz/MCljFrW', 'Bbsuser', 'User1', 'bbsjirauser1@gmail.com', '0x5e042fbab85df501dffb0aad30e159d15bb388bd', 'd3a8ec53b34da61c8e5e00ed5445424421cab147e9ffcc1c649ffa1a0a968ed5', 2),
+(2, 'user2', '$2y$12$ETZ435g8qqsemAbNfc0ZreR7XCSrPGEeVgUnnlECuGu5dMsEbgwQ2', 'Bbsuser', 'User2', 'userrbi2@hotmail.com', '0xE7253fe2834559604dc917Cbe8420301912d0445', '0BE41454D39278B39482EF100EF379D7A24D97B4AB34348F562D2DA4B28DDA95', 0),
+(3, 'Admin', '$2y$12$oFvEgcdhBiyWRHZe7F8v.uArnVJ6JKh9lt7gOmXagDaJXXRiH.XNa', 'Bbsadmin', 'Alexey Grigoriev', 'st.graalex@gmail.com', '0x47f8fb893E7f40AD9E1DDfFD46830949039C050B', '08bd1926ade5f2b48a6b0092253c328bc6c6f46e8dc393898ccddc8b3ce6933e', 2),
+(5, 'user3', '$2y$12$MzLA1834sk5d/rGEjHXeIegbQHA3LAtm/KETqXcXeifAB7b6VK.W2', 'Bbsuser', 'User3', 'userer3@yahoo.com', '0x2031A5EA6c6dC2cb69D0A148378118294A5b3904', '54023b1da8a3a05eb4398c70307afb32b13c640dab77651011e5e716570df0f0', 0),
+(6, 'salim', '$2y$12$ZgN7Nf3yYLdDagpbnJtL/OhUedwYlOxYoxpv7vXjX7QU3/XXz9LxG', 'Bbsuser', 'Sasha Koen', 'salim@salimov.com', '0xC756aA55A4b6F69d0C4638523bF9b9bf34BA81a6', 'f663a14a902c0b26318d34f2c8e9c5fc3c7e994b741c8945301c14861a3592a1', 0),
+(7, 'Amic', '$2y$12$t4j0QHLoai.SLS68qRD79Oc8x1vlnCcYe3OLMd8ZEhu0NfQ6IJ0OO', 'Bbsuser', 'Michael Anzheurov', 'amic@gmail.com', '0x3aBF8Ec7aA6B4cC606022d58B6ed2513d4f90615', '17f8b74b3388e3630c928fb740d79b54c35715767d6a59512926eaced175ce07', 0),
+(8, 'pservit', '$2y$12$EkuRjg.m6gETfSeKAZA9W.1rqbybni2rQ1ZRljkS8b2gmu/5TGGUG', 'Bbsuser', 'Sergey Prihodko', 'serj@somemail.com', '0x577a6b470A2a573B42F06Ba3EBD3f51B79e330e5', 'e82846e02f1088facca8423024e12d948992ec2e2e100ddf835fde205b679773', 0),
+(9, 'Maximus', '$2y$12$GyU4hJghOyN6uLdqOGiGeuaNADu6T4.9bH999GLuJq6.eRrt6hwKm', 'Bbsuser', 'Maxim Girilishen', 'max@maximail.com', '0x55538f847cE465bC427CE66e3DE4CaA994461Cfa', 'a91fcd97ce022f86166a34690d9998ac078d28989c86fae22c59afa8773fa776', 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -281,7 +292,7 @@ ALTER TABLE `cibb_categories`
 -- AUTO_INCREMENT для таблицы `cibb_posts`
 --
 ALTER TABLE `cibb_posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT для таблицы `cibb_roles`
@@ -293,7 +304,7 @@ ALTER TABLE `cibb_roles`
 -- AUTO_INCREMENT для таблицы `cibb_threads`
 --
 ALTER TABLE `cibb_threads`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT для таблицы `usertable`
