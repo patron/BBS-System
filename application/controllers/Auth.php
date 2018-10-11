@@ -58,7 +58,7 @@ class Auth extends MY_Controller {
                 $this->session->set_userdata('cibb_logged_in', 1);
                 $this->session->set_userdata('cibb_user_id'  , $row->id);
                 $this->session->set_userdata('cibb_username' , $row->username);
-                $this->session->set_userdata('cibb_user_roleid' , $row->role_id);
+                $this->session->set_userdata('cibb_user_roleid' , '2');
 //                $this->session->set_userdata('role' , $row->role);
 
                 // get roles

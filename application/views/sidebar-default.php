@@ -23,6 +23,7 @@ if ($this->session->userdata("role") == "Bbsadmin") {
             <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsadmin/postsettings"><i class="icon fa fa-circle-o"></i>Post Settings</a></li>
             <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsadmin/bcmanaging"><i class="icon fa fa-circle-o"></i>Bonuses Managing</a></li>
             <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsadmin/qandv"><i class="icon fa fa-circle-o"></i>Questions & Votings</a></li>
+            <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsadmin/forum"><i class="icon fa fa-circle-o"></i>Switch to the forum</a></li>
           </ul>
         </li>';
 }
@@ -32,7 +33,7 @@ elseif ($this->session->userdata("role") == "Bbsuser"){
             <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsuser/mytransactions"><i class="icon fa fa-circle-o"></i>My Transactions</a></li>
             <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsuser/userwallet"><i class="icon fa fa-circle-o"></i>Bbsuser Wallet</a></li>
             <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsuser/qandv"><i class="icon fa fa-circle-o"></i>Questions & Votings</a></li>
-            <li><a class="treeview-item" href="' . base_url() . 'index.php/thread"><i class="icon fa fa-circle-o"></i>Questions & Votings</a></li>
+            <li><a class="treeview-item" href="' . base_url() . 'index.php/bbsuser/forum"><i class="icon fa fa-circle-o"></i>Switch to the forum</a></li>
           </ul>
         </li>';
 }

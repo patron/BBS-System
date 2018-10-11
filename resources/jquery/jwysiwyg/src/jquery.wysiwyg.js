@@ -36,7 +36,7 @@
 		autoSave: true,
 		brIE: true,					// http://code.google.com/p/jwysiwyg/issues/detail?id=15
 		formHeight: 270,
-		formWidth: 440,
+		formWidth: '100%',
 		iFrameClass: null,
 		initialContent: "<p>Initial content</p>",
 		maxHeight: 10000,			// see autoGrow
@@ -367,7 +367,7 @@
 				editor.css({
 					minHeight: (newY - 6).toString() + "px",
 					// fix for issue 12 ( http://github.com/akzhan/jwysiwyg/issues/issue/12 )
-					width: (newX > 50) ? (newX - 8).toString() + "px" : ""
+					width: "100%"
 				});
 				if ($.browser.msie && parseInt($.browser.version, 10) < 7) editor.css("height", newY.toString() + "px");
 			}
@@ -378,7 +378,7 @@
 
 			if (!options.iFrameClass) {
 				element.css({
-					width: (newX > 0) ? newX.toString() + "px" : "100%"
+					width: "100%"
 				});
 			}
 			

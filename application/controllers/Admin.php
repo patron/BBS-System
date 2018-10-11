@@ -1,6 +1,6 @@
 <?php
 
-class Admin extends MY_Controller {
+class Admin extends CI_Controller {
     public $data         = array();
     public $page_config  = array();
 

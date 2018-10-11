@@ -1,6 +1,6 @@
 <?php
 
-class Thread extends MY_Controller {
+class Thread extends CI_Controller {
     public $data         = array();
     public $page_config  = array();
 
