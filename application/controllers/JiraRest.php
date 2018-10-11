@@ -6,7 +6,7 @@
  */
 class JiraRest extends MY_Controller {
 
-    protected $access = array("Bbsadmin", "User");
+    protected $access = array("Bbsadmin", "Bbsuser");
 
     public function index()
     {

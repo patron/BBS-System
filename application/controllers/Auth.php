@@ -35,7 +35,7 @@ class Auth extends MY_Controller {
 				$this->session->set_flashdata("error", "Password is invalid");
 			}
             elseif ($status == ADD_JIRA_USER_SUCCESS) {
-                $this->session->set_flashdata("error", "User is registered. Now you can login!");
+                $this->session->set_flashdata("error", "Bbsuser is registered. Now you can login!");
             }
             elseif ($status == INVALID_CREDEINTIALS) {
                 $this->session->set_flashdata("error", "Invalid credentials or does'nt exist :(");
@@ -58,13 +58,14 @@ class Auth extends MY_Controller {
                 $this->session->set_userdata('cibb_logged_in', 1);
                 $this->session->set_userdata('cibb_user_id'  , $row->id);
                 $this->session->set_userdata('cibb_username' , $row->username);
-                $this->session->set_userdata('cibb_user_roleid' , $row->role_id);
+                $this->session->set_userdata('cibb_user_roleid' , '2');
+//                $this->session->set_userdata('role' , $row->role);
 
                 // get roles
-                $roles = $this->db->get_where(TBL_ROLES, array('id' => $row->role_id))->row_array();
-                foreach ((array)$roles as $key => $value) {
-                    $this->session->set_userdata($key, $value);
-                }
+//                $roles = $this->db->get_where(TBL_ROLES, array('id' => $row->role_id))->row_array();
+//                foreach ((array)$roles as $key => $value) {
+//                    $this->session->set_userdata($key, $value);
+//                }
 
 
 				// success

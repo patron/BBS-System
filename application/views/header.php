@@ -51,7 +51,7 @@
 						<?php if ($this->session->userdata('admin_area') != 0): ?>
                         <li><a href="<?php echo site_url('admin'); ?>">Admin</a></li>
 						<?php endif; ?>
-                        <li><a href="<?php echo site_url('user/logout'); ?>">Logout</a></li>
+                        <li><a href="<?php echo site_url('user/logout'); ?>">Login</a></li>
                         <?php endif; ?>
                     </ul>
                     </div><!-- /.nav-collapse -->

@@ -1,9 +1,11 @@
 <?php
 
-class Admin extends CI_Controller {    
+class Admin extends CI_Controller {
     public $data         = array();
     public $page_config  = array();
-    
+
+
+    protected $access = array("Bbsadmin", "Bbsuser");
     public function __construct() 
     {
         parent::__construct();
@@ -96,7 +98,7 @@ class Admin extends CI_Controller {
         
         $this->db->order_by('role', 'ASC');
         $this->data['roles']   = $this->db->get(TBL_ROLES)->result();
-        $this->data['user']    = $this->db->get_where(TBL_USERS, array('id' => $user_id))->row();
+        $this->data['Bbsuser']    = $this->db->get_where(TBL_USERS, array('id' => $user_id))->row();
         $this->data['title']   = 'Admin Users Edit :: '.CIBB_TITLE;
         $this->load->view('header', $this->data);
         $this->load->view('admin/sidebar');

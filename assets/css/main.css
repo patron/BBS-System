@@ -15276,3 +15276,9 @@ table.avatared td:nth-of-type(5) {
 .selectedToSend {
   background: #eee;
 }
+.textpost-wysiwyg-iframe {
+  width: 100% !important;
+}
+div .wysiwyg {
+  width: 100% !important;
+}

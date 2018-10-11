@@ -98,7 +98,7 @@ class Auth_model extends CI_Model {
                 $new_user_data = array(
                     'username' => $username,
                     'password' => $pasword_hash_new,
-                    'role' => 'User',
+                    'role' => 'Bbsuser',
                     'fullname' => $jira_user_data->displayName,
                     'email' => $jira_user_data->emailAddress
                 );
@@ -115,7 +115,7 @@ class Auth_model extends CI_Model {
 
             $jira_user_data = check_user_existence( $username, $password );
 
-            if ( $jira_user_data != false) { // Check if User doesn't exist
+            if ( $jira_user_data != false) { // Check if Bbsuser doesn't exist
 
                 $hash_options = [
                     'cost' => 12,
@@ -126,7 +126,7 @@ class Auth_model extends CI_Model {
                 $new_user_data = array(
                     'username' => $username,
                     'password' => $pasword_hash_new,
-                    'role' => 'User',
+                    'role' => 'Bbsuser',
                     'fullname' => $jira_user_data->displayName,
                     'email' => $jira_user_data->emailAddress,
                     'ethaddr' => $ethwallet,

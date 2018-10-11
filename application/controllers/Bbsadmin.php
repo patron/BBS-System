@@ -108,4 +108,18 @@ class Bbsadmin extends MY_Controller {
         $this->load->view("blockchain-js");
 //        $this->load->view("datatablejs");
     }
+    public function forum() {
+        $this->session->set_userdata('cibb_user_roleid' , '2');
+        $this->load->model('bbs_model');
+
+        $this->load->view("bbsheader");
+        $this->load->view("app-header");
+
+        $this->load->view("sidebar-default");
+
+        $this->load->view("main-page-forum");
+
+        $this->load->view("bbsfooter");
+        $this->load->view("blockchain-js");
+    }
 }

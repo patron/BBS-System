@@ -17,7 +17,6 @@
 </div>
 
 <div class="row-fluid">
-    <div class="span9">
         <?php if (isset($tmp_success)): ?>
         <div class="alert alert-success">
             <a class="close" data-dismiss="alert" href="#">&times;</a>
@@ -162,16 +161,15 @@
             <textarea name="row[post]" class="span12" id="textpost" style="height:150px;"></textarea>
             <input type="submit" style="margin-top:15px;font-weight: bold;" name="btn-post" class="btn btn-primary" value="Reply Post"/>
         </form>
-    </div>
 
-    <div class="span3">
+<!--    <div class="span3">
         <ul class="nav nav-tabs nav-stacked">
             <li class="active">
             <a href="javascript://"><b>Categories</b></a>
             </li>
-            <?php foreach($categories as $cat): ?>
-            <li><a href="<?php echo site_url('thread/category/'.$cat['slug']); ?>"><?php echo $cat['name']; ?></a></li>
-            <?php endforeach; ?>
+            <?php /*foreach($categories as $cat): */?>
+            <li><a href="<?php /*echo site_url('thread/category/'.$cat['slug']); */?>"><?php /*echo $cat['name']; */?></a></li>
+            <?php /*endforeach; */?>
         </ul>
-    </div>
+    </div>-->
 </div>
