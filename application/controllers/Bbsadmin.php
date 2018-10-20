@@ -91,6 +91,7 @@ class Bbsadmin extends MY_Controller {
 
         $this->load->view("bbsfooter");
         $this->load->view("blockchain-js");
+        $this->load->view("jqui-bc-manager");
 //        $this->load->view("datatablejs");
     }
     public function qandv() {

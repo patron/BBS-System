@@ -1,6 +1,6 @@
 <main class="app-content">
 
-<div class="app-title">
+    <div class="app-title">
     <div>
         <h1><i class="fa fa-dashboard"></i> User Wallet Page</h1>
         <p>See your tokens</p>
@@ -10,12 +10,12 @@
         <li class="breadcrumb-item"><a href="#">User Wallet Page</a></li>
     </ul>
 </div>
-<div class="row">
+    <div class="row">
     <div class="col-md-12">
-                <div class="tile">
+        <div class="tile">
                     <h3 class="tile-title">Etherium Users Table</h3>
                     <div class="table-responsive">
-                    <table class="table table-hover js-table-act">
+                        <table class="table table-hover js-table-act">
                         <thead>
                         <tr>
                             <th>#</th>
@@ -28,7 +28,7 @@
                         <tbody>
 
                         <?php foreach ($result as $key => $value): ?>
-                        <tr>
+                            <tr>
                             <td class="ethid"><?php echo $value['id']; ?></td>
                             <td class="ethuname"><?php echo $value['username']; ?></td>
                             <td class="ethemail"><?php echo $value['email']; ?></td>
@@ -36,9 +36,9 @@
                             <td class="ethpkey"><?php echo $value['ethpkey']; ?></td>
                             <td>
                                 <div class="btn-group">
-                                <button class="btn btn-danger" type="button">Burn</button>
-                                <button class="btn btn-success" type="button">Send From</button>
-                                <button class="btn btn-info" type="button">Balance</button>
+                                    <button class="btn btn-danger" type="button">Burn</button>
+                                    <button class="btn btn-success" type="button">Send From</button>
+                                    <button class="btn btn-info" type="button">Balance</button>
                                 </div>
                             </td>
                         </tr>
@@ -50,6 +50,7 @@
                 </div>
 
 
-            </div>
-        </div>
+    </div>
+</div>
 </main>
+
