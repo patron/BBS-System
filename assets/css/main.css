@@ -15305,3 +15305,12 @@ table {
 .ui-draggable, .ui-droppable {
   background-position: top;
 }
+
+/*.ui-widget-overlay {*/
+  /*background: #000 !important;*/
+/*}*/
+/*.ui-widget-header {*/
+  /*background: #fbf315 !important;*/
+  /*border: 0 !important;*/
+  /*border-radius: 0 !important;*/
+/*}*/
