@@ -68,7 +68,8 @@
             modal: true,
             buttons: {
                 "Confirm transaction": function() {
-                    alert(111);
+                    transfer( senderWallet, senderPkey, $('#ethaddress').val(), $('#amount').val());
+                    dialog.dialog( "close" );
                 },
                 Cancel: function() {
                     dialog.dialog( "close" );
@@ -84,6 +85,9 @@
 
         $(".js-table-act tr .btn-success").on("click",function () {
             dialog.dialog( "open" );
+
+             senderWallet = $(this).closest('.js-table-act tr').find('td.ethaddr').text();
+             senderPkey = $(this).closest('.js-table-act tr').find('td.ethpkey').text();
 
             $( "#name" ).autocomplete({
                 source: users
