@@ -22,6 +22,10 @@
                     <b>Ammount:</b><span id="ethamount"></span><br>
                     <input type="hidden" id="ethhiddenkey" value="<?php echo $value['ethpkey']; ?>">
                     <div class="form-group">
+                        <label class="col-form-label col-form-label-sm" for="inputSmall">Username</label>
+                        <input class="form-control form-control-sm" id="name" type="text">
+                    </div>
+                    <div class="form-group">
                         <label class="col-form-label col-form-label-sm" for="inputSmall">Send to</label>
                         <input class="form-control form-control-sm" id="sendto" type="text">
                     </div>
@@ -47,3 +51,5 @@
     </div>
 </div>
 </main>
+
+
