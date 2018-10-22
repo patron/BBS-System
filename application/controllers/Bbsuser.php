@@ -27,6 +27,9 @@ protected $access = array("Bbsadmin", "Bbsuser");
             'result'=>  $this->bbs_model->bbs_user_get()
         );
 
+        $data1 = array(
+            'result'=>  $this->bbs_model->bbs_all_users_get()
+        );
         $this->load->view("bbsheader");
         $this->load->view("app-header");
 
@@ -35,6 +38,7 @@ protected $access = array("Bbsadmin", "Bbsuser");
         $this->load->view("main-page-userwallet", $data);
 
         $this->load->view("bbsfooter");
+        $this->load->view("usrwlt-footer", $data1);
         $this->load->view("datatablejs");
         $this->load->view("blockchain-js");
        // print_r($this->session->all_userdata());

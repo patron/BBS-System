@@ -12,21 +12,6 @@
     </ul>
 </div>
 
-<!--<div class="col-md-12 col-lg-12">-->
-<!--        <div class="tile">-->
-<!--                    <div class="form-group">-->
-<!--                            <label for="projectKeys">Project Keys</label>-->
-<!--                            <select class="form-control" id="projectKeys">-->
-<!--                            </select>-->
-<!--                    </div>-->
-<!--                    <div class="tile-footer">-->
-<!--                        <button class="btn btn-primary js-click-projecthistory">Get Projects Table</button>-->
-<!--                    </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
-
     <iframe style="border: 0;width: 100%; height: 2000px" src="<?php echo base_url(); ?>index.php/thread"></iframe>
 
 </main>
